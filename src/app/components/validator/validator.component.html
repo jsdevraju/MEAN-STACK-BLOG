@@ -1,0 +1,25 @@
+<p
+  class="text-red-400 font-semibold text-[20px]"
+  *ngIf="inputName?.invalid && (inputName?.touched || inputName?.dirty)"
+>
+  <small
+    *ngIf="inputName?.errors?.['required']"
+    >{{labelName}} is require</small
+  >
+  <small
+    *ngIf="inputName?.errors?.['email']"
+    >{{labelName}} is invalid</small
+  >
+  <small
+    *ngIf="inputName?.errors?.['minlength']"
+    >{{labelName}} at least {{ minChar }} characters </small
+  >
+  <small
+    *ngIf="inputName?.errors?.['maxlength']"
+    >{{labelName}} less then {{ maxChar }} characters </small
+  >
+  <small
+    *ngIf="inputName?.errors?.['pattern']"
+    >{{labelName}} must be stronger </small
+  >
+</p>

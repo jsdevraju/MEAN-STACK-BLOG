@@ -1,0 +1,20 @@
+<section class="sec">
+  <div class="container">
+    <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
+      <h2
+        class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900">
+        Our Latest {{ blogs.name }}
+      </h2>
+      <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+        We use an agile approach to test assumptions and connect with the needs
+        of your audience early and often.
+      </p>
+    </div>
+    <!-- Render Latest Blogs -->
+    <div class="flex flex-wrap gap-6" *ngIf="!loading">
+        <app-blog-card *ngFor="let blog of blogs.blogs" [blog]="blog"></app-blog-card>
+    </div>
+    <app-loader *ngIf="loading"></app-loader>
+  </div>
+</section>
+

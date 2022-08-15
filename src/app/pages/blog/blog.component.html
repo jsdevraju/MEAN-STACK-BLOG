@@ -1,0 +1,26 @@
+<section class="sec" *ngIf="!loading">
+  <div class="container">
+    <div class="mb-6" *ngFor="let blog of blogs">
+      <h3
+        class="underline underline-offset-1 text-blue-500 text-3xl cursor-pointer mb-2 capitalize"
+        [routerLink]="['/blogs', blog.name]"
+      >
+        {{ blog.name }} <span class="!no-underline">({{ blog.count }})</span>
+      </h3>
+      <div class="flex items-center gap-4">
+        <app-blog-card
+          *ngFor="let blog of blog.blogs"
+          [blog]="blog"
+        ></app-blog-card>
+      </div>
+      <!-- Pagination Read More Details Page -->
+      <div class="mt-2" *ngIf="blog.count > 3">
+        <h3 [routerLink]="['/blogs', blog.name]" class="text-blue-700 text-center text-2xl cursor-pointer">
+          Read More &gt;
+        </h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-loader *ngIf="loading"></app-loader>

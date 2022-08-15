@@ -1,0 +1,70 @@
+<section class="sec" *ngIf="!loading">
+  <div class="container">
+    <!-- Create Blog Details Page With Tailwind Css -->
+    <div class="mb-4">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/typescript-blog-355604.appspot.com/o/blog%2Fbutterfly-7300501_960_720.webp?alt=media&token=fa4301be-292f-4543-abb9-9ab5b5f15748"
+        alt="Razu Islam"
+        width="100%"
+        class="object-cover md:h-[500px] rounded-lg"
+      />
+    </div>
+    <!-- Title With Post -->
+    <div class="flex items-center justify-between flex-wrap mb-6">
+      <h1 class="text-2xl font-semibold text-gray-900">
+        {{ blogDetails.title }}
+      </h1>
+      <p class="text-gray-500">{{ blogDetails.createdAt | date: "medium" }}</p>
+      <p class="text-gray-900 font-semibold">
+        Post By: {{ blogDetails.user.fullname }}
+      </p>
+    </div>
+    <!-- Content -->
+    <div className="mt-6" [innerHTML]="blogDetails.content"></div>
+    <!-- Comment Area -->
+    <div class="mt-4 mb-4 border-t border-gray-800 border-b p-3 text-center">
+      <h1 class="text-2xl font-semibold text-gray-900">⭐ Comments ⭐</h1>
+    </div>
+    <!-- Add COmment -->
+    <div class="shadow-md">
+      <form class="w-full p-4">
+        <div class="mb-2">
+          <label for="comment" class="text-lg text-gray-600"
+            >Add a comment</label
+          >
+          <textarea
+            class="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
+            name="comment"
+            placeholder=""
+          ></textarea>
+        </div>
+        <button class="px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded">
+          Comment
+        </button>
+      </form>
+    </div>
+    <!-- All Comment Render -->
+    <div class="flex mt-10">
+      <div class="flex-shrink-0 mr-3">
+        <img
+          class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10 cursor-pointer"
+          src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80"
+          alt=""
+        />
+      </div>
+      <div
+        class="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed"
+      >
+        <strong>Sarah</strong>
+        <span class="text-xs text-gray-400"> 3:34 PM</span>
+        <p class="text-sm">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-loader *ngIf="loading"></app-loader>

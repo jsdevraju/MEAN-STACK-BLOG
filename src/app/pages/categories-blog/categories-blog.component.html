@@ -1,0 +1,16 @@
+<section class="sec" *ngIf="!loading">
+  <div class="container">
+    <h1 class="text-3xl text-gray-900 font-semibold mb-4">
+      All {{ newCategory.name }} Blog
+    </h1>
+    <div class="flex flex-wrap gap-4 items-center">
+      <app-blog-card
+        *ngFor="let blog of blogs"
+        [blog]="blog"
+        [categoryName]="newCategory.name"
+      ></app-blog-card>
+    </div>
+  </div>
+</section>
+
+<app-loader *ngIf="loading"></app-loader>

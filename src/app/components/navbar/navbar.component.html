@@ -1,0 +1,39 @@
+<header class="shadow-lg">
+  <div class="container">
+    <nav class="navbar bg-base-100">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl" routerLink="/"
+          >Mean Blog</a
+        >
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0" *ngIf="!token">
+          <li *ngFor="let item of menuData">
+            <a [routerLink]="item.path">{{ item.name }}</a>
+          </li>
+        </ul>
+        <!-- After Login -->
+        <div class="dropdown dropdown-end"  *ngIf="token">
+          <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 rounded-full">
+              <img [src]="user.avatar" />
+            </div>
+          </label>
+          <ul
+            tabindex="0"
+            class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a class="justify-between">
+                Profile
+                <span class="badge">New</span>
+              </a>
+            </li>
+            <li><a (click)="logout()">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
