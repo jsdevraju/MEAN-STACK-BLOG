@@ -35,4 +35,8 @@ export class NavbarComponent implements OnInit {
     this.token = this.api.userState?.token;
     this.user = this.api.userState?.user;
   }
+
+  ngOnChanges() {
+    console.log("hell")
+  }
 }

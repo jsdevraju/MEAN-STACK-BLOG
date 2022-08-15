@@ -34,7 +34,6 @@ export class CategoriesBlogComponent implements OnInit {
         .subscribe((res: any) => {
           this.blogs = res.blogs;
           this.loading = false;
-          console.log(res);
         });
     });
   }

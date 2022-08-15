@@ -19,7 +19,6 @@ export class BlogsLatestComponent implements OnInit {
   ngOnInit(): void {
     this.api.getAllBlogs().subscribe(
       (res: any) => {
-        console.log(res);
         this.blogs = res.blogs[0];
         this.loading = false;
       },

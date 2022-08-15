@@ -23,6 +23,7 @@ import { ValidatorComponent } from './components/validator/validator.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { StoreModule } from '@ngrx/store';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent],

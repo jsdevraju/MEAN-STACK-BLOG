@@ -18,7 +18,6 @@ export class BlogDetailsComponent implements OnInit {
       .getSingleBlog(`${this.route.snapshot.paramMap.get('id')}`)
       .subscribe(
         (res: any) => {
-          console.log(res);
           this.blogDetails = res.blog;
           this.loading = false;
         },

@@ -64,6 +64,5 @@ export class RegisterComponent implements OnInit {
         console.log(err);
       }
     );
-    console.log(this.loginForm.value);
   }
 }
